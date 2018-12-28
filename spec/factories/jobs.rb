@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :job do
-    name { "MyString" }
+    sequence(:name) { |n|  "My new job #{n}" }
     skill_level { "unskilled" }
     work_environment { "weathered" }
     apprenticeship { false }
@@ -14,9 +14,9 @@ FactoryBot.define do
     high_hours_of_work { "12" }
     days_of_week { "Everyday" }
     job_openings { "" }
-    job_description { "MyText" }
-    generation_id { nil }
-    industry_id { nil }
+    sequence(:job_description ){ |n| "All about my new job #{n}" }
+    sequence(:generation_id) { |n| "#{n}" } 
+    sequence(:industry_id) { |n| "#{n}"  }
   end
 end
 
