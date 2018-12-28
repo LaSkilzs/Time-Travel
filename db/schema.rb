@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2018_12_28_010228) do
 
   create_table "funfacts", force: :cascade do |t|
     t.bigint "generation_id"
-    t.string "fact_length"
+    t.string "fact_length", default: "paragraph"
     t.text "fact"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2018_12_28_010228) do
     t.string "location"
     t.string "wage_per_week"
     t.text "description"
-    t.boolean "housing_offered"
+    t.boolean "housing_offered", default: false
     t.bigint "job_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -54,13 +54,13 @@ ActiveRecord::Schema.define(version: 2018_12_28_010228) do
 
   create_table "jobs", force: :cascade do |t|
     t.string "name"
-    t.string "skill_level"
-    t.string "work_environment"
-    t.boolean "apprenticeship"
-    t.boolean "educated"
-    t.string "age"
-    t.string "gender"
-    t.string "travel"
+    t.string "skill_level", default: "unskilled"
+    t.string "work_environment", default: "weathered"
+    t.boolean "apprenticeship", default: false
+    t.boolean "educated", default: false
+    t.string "age", default: "adults"
+    t.string "gender", default: "male"
+    t.string "travel", default: "home"
     t.string "start_avg_wage_per_week"
     t.string "end_avg_wage_per_week"
     t.integer "low_hours_of_work"

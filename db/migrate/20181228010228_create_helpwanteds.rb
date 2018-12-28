@@ -5,7 +5,7 @@ class CreateHelpwanteds < ActiveRecord::Migration[5.2]
       t.string :location
       t.string :wage_per_week
       t.text :description
-      t.boolean :housing_offered
+      t.boolean :housing_offered, default: false
       t.references :job, foreign_key: true
 
       t.timestamps

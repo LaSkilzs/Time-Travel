@@ -7,4 +7,21 @@ class Job < ApplicationRecord
   enum days_of_week: {Mon_Fri: "Mon_Fri", Mon_Sat: "Mon_Sat", Everyday: "Everyday"}
   enum skill_level: {unskilled: "unskilled", semiskilled: "semiskilled", kindred: "kindred", skilled: "skilled", professional: "professional"}
   enum work_environment: {weathered: "weathered", unweathered: "unweathered", mixed: "mixed"}
+
+
+validates :name, presence: true
+validates :job_description, presence: true
+
+
+
+
+
+
+
+
+
+
+
+
 end
+
