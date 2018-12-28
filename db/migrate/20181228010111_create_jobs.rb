@@ -9,12 +9,13 @@ class CreateJobs < ActiveRecord::Migration[5.2]
       t.string :age
       t.string :gender
       t.string :travel
-      t.decimal :start_av_wage_per_week
-      t.decimal :end_avg_wage_per_week
-      t.Integer :hours_of_work
+      t.string :start_avg_wage_per_week
+      t.string :end_avg_wage_per_week
+      t.integer :low_hours_of_work
+      t.integer :high_hours_of_work
       t.string :days_of_week
-      t.Integer :job_openings
-      t.text :description
+      t.integer :job_openings
+      t.text :job_description
       t.references :generation, foreign_key: true
       t.references :industry, foreign_key: true
 

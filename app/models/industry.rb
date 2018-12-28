@@ -1,5 +1,5 @@
 class Industry < ApplicationRecord
-  has many :jobs, dependent: :destroy
-  has many :generations, through: :jobs
+  has_many :jobs, dependent: :destroy
+  has_many :generations, through: :jobs
 
 end
