@@ -6,8 +6,8 @@ module Api
 
       def index
         @generations = Generation.all
-
-        render json: {status: 'SUCCESS', message: 'Load Generations', data: @generations}, status: :ok
+    
+        render json: {status: 'SUCCESS', message: 'Load Generations', generations: @generations}, status: :ok
       end
 
       def show
