@@ -38,8 +38,8 @@ require 'rails_helper'
         high_hours_of_work: 12,
         days_of_week: "Everyday",
         job_openings: 10,
+        job_score: 78,
         job_description: "MyText",
-        generation_id: 1,
         industry_id: 1 }
 
       post "api/v1/jobs", params: {job: job_params}

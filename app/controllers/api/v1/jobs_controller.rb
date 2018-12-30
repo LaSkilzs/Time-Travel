@@ -45,7 +45,7 @@ module Api
       end
 
       def job_params
-        params.permit(:name, :skill_level, :work_environment, :apprenticeship, :educated, :age, :gender, :travel, :start_avg_wage_per_week, :end_avg_wage_per_week, :low_hours_of_work, :high_hours_of_work, :days_of_week, :job_openings, :job_description, :generation_id, :industry_id)
+        params.permit(:name, :skill_level, :work_environment, :apprenticeship, :educated, :age, :gender, :travel, :start_avg_wage_per_week, :end_avg_wage_per_week, :low_hours_of_work, :high_hours_of_work, :days_of_week, :job_openings, :job_score, :job_description, :industry_id)
       end
 
     end

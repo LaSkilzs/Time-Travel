@@ -43,7 +43,7 @@ module Api
       end
 
       def industry_params
-        params.permit(:name, :summary)
+        params.permit(:name, :summary, :generation_id)
       end
     end
   end
