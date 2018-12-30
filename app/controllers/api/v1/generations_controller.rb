@@ -5,9 +5,11 @@ module Api
       before_action :find_generation, only: [:show, :destroy, :update]
 
       def index
-        @generations = Generation.all
-    
-        render json: {status: 'SUCCESS', message: 'Load Generations', generations: @generations}, status: :ok
+        @generations = GenerationSerializer.new(Generation.all)
+        @industries = IndustrySerializer.new(Industry.all)
+        @jobs = JobSerializer.new(Job.all)
+        
+        render json: {status: 'SUCCESS', message: 'Load Generations', generations: @generations, industries: @industries, jobs: @jobs}, status: :ok
       end
 
       def show
@@ -39,7 +41,7 @@ module Api
 
       private
       def find_generation
-        @generation = Generation.find(params[:id])
+        @generation = GenerationSerializer.new(Generation.find(params[:id]))
       end
 
       def generation_params

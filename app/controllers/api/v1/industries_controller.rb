@@ -5,7 +5,7 @@ module Api
       before_action :find_industry, only: [:show, :update, :destroy]
 
       def index
-        @industries = Industry.all
+        @industries = IndustrySerializer.new(Industry.all)
 
         render json: {status: 'SUCCESS', message: "Industries Loaded", data:@industries}, status: :ok
       end
@@ -39,7 +39,7 @@ module Api
 
       private
       def find_industry
-        @industry = Industry.find(params[:id])
+        @industry = IndustrySerializer.new(Industry.find(params[:id]))
       end
 
       def industry_params
