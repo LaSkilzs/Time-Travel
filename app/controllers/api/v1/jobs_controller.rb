@@ -5,7 +5,7 @@ module Api
       before_action :find_job, only: [:show, :destroy, :update]
       
       def index
-        @jobs = Job.all
+        @jobs = JobSerializer.new(Job.all)
         
         render json: {status: 'SUCCESS', message: 'Loaded jobs', data:@jobs}, status: :ok
       end
@@ -41,7 +41,7 @@ module Api
       private
 
       def find_job
-        @job = Job.find(params[:id])
+        @job = JobSerializer.new(Job.find(params[:id]))
       end
 
       def job_params
