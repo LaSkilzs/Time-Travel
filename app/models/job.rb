@@ -1,6 +1,6 @@
 class Job < ApplicationRecord
-  belongs_to :generation
   belongs_to :industry
+  has_many :helpwanteds
   enum gender: {male: "male", female: "female", both: "both"}
   enum age: {adults: "adults" , teens: "teens", children: "children", no_children: "no_children", family: "family"}
   enum travel: {home: "home", occassion: "occassion", often: "often"}
