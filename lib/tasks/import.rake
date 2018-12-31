@@ -34,5 +34,29 @@ desc "Import generations from csv"
           Job.create(industry_id: row["industry_id"].to_i, name: row["name"], skill_level: row["skill_level"], work_environment: row["work_environment"], apprenticeship: row["apprenticeship"], educated: row["educated"], age: row["age"], gender: row["gender"], travel: row["travel"], start_avg_wage_per_week: row["start_avg_wage_per_week"], end_avg_wage_per_week: row["end_avg_wage_per_week"],low_hours_of_work: row["low_hours_of_work"].to_i, high_hours_of_work: row["high_hours_of_work"].to_i, days_of_week: row["days_of_week"], job_openings: row["job_openings"].to_i, job_score: row["job_score"].to_i, job_description: row["job_description"])
       end
     end
+
+    desc "Import jobs from csv"
+      task profiles: :environment do
+        profile_filename = File.join Rails.root, "db/csv/profiles.csv"
+        CSV.foreach(profile_filename, headers: true) do |row|
+          Profile.create(name: row["name"], age: row["age"], gender: row["gender"], marital_status: row["marital_status"], education: row["education"])
+        end
+    end
+    
+    desc "Import jobs from csv"
+      task applications: :environment do
+        application_filename = File.join Rails.root, "db/csv/applications.csv"
+        CSV.foreach(application_filename, headers: true) do |row|
+          Application.create(profile_id: row["profile_id"], citizenship: row["citizenship"], parentunion: row["parentunion"], parenttrade: row["parenttrade"], entreprenuership: row["entreprenuership"], workwithothers: row["workwithothers"], monotoustask: row["monotoustask"], worklifebalance: row["worklifebalance"], workenvironment: ["workenvironment"], toomanyhours: row["toomanyhours"], worklocation: row["worklocation"])
+        end
+    end
+
+    desc "Import jobs from csv"
+      task helpwanteds: :environment do
+        helpwanted_filename = File.join Rails.root, "db/csv/helpwanteds.csv"
+        CSV.foreach(helpwanted_filename, headers: true) do |row|
+          Helpwanted.create(location: row["location"], wage_per_week: row["wage_per_week"], housing_offered: row["housing_offered"], female: row["female"], job_id: row["job_id"], industry_id: row["industry_id"], profile_id: row["profile_id"])
+        end
+    end
   end
 

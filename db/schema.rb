@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_30_142841) do
+ActiveRecord::Schema.define(version: 2018_12_31_000840) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "applications", force: :cascade do |t|
     t.bigint "profile_id"
+    t.boolean "citizenship", default: false
+    t.boolean "parentunion", default: false
+    t.boolean "parenttrade", default: false
+    t.boolean "entreprenuership", default: false
+    t.boolean "workwithothers", default: false
+    t.boolean "monotoustask", default: false
+    t.boolean "worklifebalance", default: false
+    t.boolean "workenvironment", default: false
+    t.boolean "toomanyhours", default: false
+    t.string "worklocation", default: "southern"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["profile_id"], name: "index_applications_on_profile_id"
@@ -48,8 +58,11 @@ ActiveRecord::Schema.define(version: 2018_12_30_142841) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "industry_id"
+    t.bigint "profile_id"
+    t.boolean "female", default: false
     t.index ["industry_id"], name: "index_helpwanteds_on_industry_id"
     t.index ["job_id"], name: "index_helpwanteds_on_job_id"
+    t.index ["profile_id"], name: "index_helpwanteds_on_profile_id"
   end
 
   create_table "industries", force: :cascade do |t|
@@ -117,6 +130,7 @@ ActiveRecord::Schema.define(version: 2018_12_30_142841) do
   add_foreign_key "funfacts", "generations"
   add_foreign_key "helpwanteds", "industries"
   add_foreign_key "helpwanteds", "jobs"
+  add_foreign_key "helpwanteds", "profiles"
   add_foreign_key "industries", "generations"
   add_foreign_key "jobs", "industries"
   add_foreign_key "jobsearches", "helpwanteds"
