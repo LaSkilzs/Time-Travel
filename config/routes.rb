@@ -5,6 +5,9 @@ Rails.application.routes.draw do
       resources :funfacts, only: [:index, :show, :create, :update, :destroy]
       resources :generations, only: [:index, :show, :create, :update, :destroy]
       resources :industries, only: [:index, :show, :create, :update, :destroy]
+      resources :profiles, only: [:index, :show, :create, :update, :destroy]
+      resources :applications, only: [:index, :show, :create, :update, :destroy]
+      resources :helpwanteds, only: [:index, :show, :create, :update, :destroy]
     end
   end
 end

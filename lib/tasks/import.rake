@@ -42,7 +42,7 @@ desc "Import generations from csv"
           Profile.create(name: row["name"], age: row["age"], gender: row["gender"], marital_status: row["marital_status"], education: row["education"])
         end
     end
-    
+
     desc "Import jobs from csv"
       task applications: :environment do
         application_filename = File.join Rails.root, "db/csv/applications.csv"
