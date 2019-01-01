@@ -1,0 +1,10 @@
+name,age,gender,marital_status,education,availableforwork,trade,experience
+Cheryl Cole,25,female,single,highschool,today,FALSE,professional
+Ginger Snaps,19,female,married,highschool,today,FALSE,unskilled
+Minnie Mouse,31,female,divorced,college,next month,TRUE,semiskilled
+Bobby Brown,55,male,married,highschool,next year,TRUE,skilled
+Tyrone Smalls,17,male,single,highschool,next week,FALSE,unskilled
+Jasper Brown,20,male,married,none,next week,TRUE,unskilled
+Chance Fountain,16,male,single,none,two weeks,TRUE,unskilled
+Prince Fountain,27,male,married,college,tomorrow,FALSE,semiskilled
+Cliff Mills,41,male,married,highschool,tomorrow,FALSE,unskilled

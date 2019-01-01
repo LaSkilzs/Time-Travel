@@ -10,15 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_30_142841) do
+ActiveRecord::Schema.define(version: 2018_12_31_220331) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "applications", force: :cascade do |t|
     t.bigint "profile_id"
+    t.boolean "citizenship", default: false
+    t.boolean "parentunion", default: false
+    t.boolean "parenttrade", default: false
+    t.boolean "entreprenuership", default: false
+    t.boolean "workwithothers", default: false
+    t.boolean "monotoustask", default: false
+    t.boolean "worklifebalance", default: false
+    t.boolean "workenvironment", default: false
+    t.boolean "toomanyhours", default: false
+    t.string "worklocation", default: "southern"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "app_score", default: 60
     t.index ["profile_id"], name: "index_applications_on_profile_id"
   end
 
@@ -42,14 +53,17 @@ ActiveRecord::Schema.define(version: 2018_12_30_142841) do
 
   create_table "helpwanteds", force: :cascade do |t|
     t.string "location"
-    t.string "wage_per_week"
+    t.float "wage_per_week"
     t.boolean "housing_offered", default: false
     t.bigint "job_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "industry_id"
+    t.bigint "profile_id"
+    t.boolean "female", default: false
     t.index ["industry_id"], name: "index_helpwanteds_on_industry_id"
     t.index ["job_id"], name: "index_helpwanteds_on_job_id"
+    t.index ["profile_id"], name: "index_helpwanteds_on_profile_id"
   end
 
   create_table "industries", force: :cascade do |t|
@@ -58,6 +72,7 @@ ActiveRecord::Schema.define(version: 2018_12_30_142841) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "generation_id"
+    t.integer "availablejobs", default: 0
     t.index ["generation_id"], name: "index_industries_on_generation_id"
   end
 
@@ -104,6 +119,9 @@ ActiveRecord::Schema.define(version: 2018_12_30_142841) do
     t.string "education", default: "high school"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "availableforwork", default: "today"
+    t.boolean "trade", default: false
+    t.string "experience", default: "unskilled"
   end
 
   create_table "users", force: :cascade do |t|
@@ -117,6 +135,7 @@ ActiveRecord::Schema.define(version: 2018_12_30_142841) do
   add_foreign_key "funfacts", "generations"
   add_foreign_key "helpwanteds", "industries"
   add_foreign_key "helpwanteds", "jobs"
+  add_foreign_key "helpwanteds", "profiles"
   add_foreign_key "industries", "generations"
   add_foreign_key "jobs", "industries"
   add_foreign_key "jobsearches", "helpwanteds"

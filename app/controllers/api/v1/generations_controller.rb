@@ -6,6 +6,8 @@ module Api
 
       def index
         @generations = GenerationSerializer.new(Generation.all)
+
+        #@jobs.order(:job_score ASC)
         @industries = IndustrySerializer.new(Industry.all)
         @jobs = JobSerializer.new(Job.all)
         
