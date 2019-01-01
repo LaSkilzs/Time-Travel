@@ -5,7 +5,7 @@ module Api
       before_action :find_funfact, only: [:show, :destroy, :update]
 
       def index
-        @funfacts = Funfact.all
+        @funfacts = FunfactSerializer.new(Funfact.all)
 
         render json: {status: 'SUCCESS', message: 'Loaded FunFacts', data:@funfacts}, status: :ok
       end

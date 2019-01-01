@@ -5,7 +5,9 @@ module Api
       before_action :find_helpwanted, only: [:show, :update, :destroy]
 
       def index
-        @helpwanteds = HelpwantedSerializer.new(Helpwanted.all)
+        @helpwanteds = HelpwantedSerializer.new(Helpwanted.all.order("wage_per_week DESC"))
+
+       
 
         render json: {status: 'SUCCESS', message: "Loaded Helpwanteds", helpwanteds: @helpwanteds}, status: :ok
       end

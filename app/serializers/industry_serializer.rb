@@ -1,5 +1,9 @@
 class IndustrySerializer
   include FastJsonapi::ObjectSerializer
-  attributes :generation_id, :name, :summary
-  # has_many :jobs
+  attributes  :name, :availablejobs
+
+  
+  belongs_to :generation
+  has_many :jobs
+  has_many :helpwanteds
 end
