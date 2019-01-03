@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_31_220331) do
+ActiveRecord::Schema.define(version: 2019_01_01_165450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2018_12_31_220331) do
     t.bigint "industry_id"
     t.bigint "profile_id"
     t.boolean "female", default: false
+    t.string "image", default: "none"
     t.index ["industry_id"], name: "index_helpwanteds_on_industry_id"
     t.index ["job_id"], name: "index_helpwanteds_on_job_id"
     t.index ["profile_id"], name: "index_helpwanteds_on_profile_id"
@@ -73,6 +74,7 @@ ActiveRecord::Schema.define(version: 2018_12_31_220331) do
     t.datetime "updated_at", null: false
     t.bigint "generation_id"
     t.integer "availablejobs", default: 0
+    t.string "image", default: "none"
     t.index ["generation_id"], name: "index_industries_on_generation_id"
   end
 
@@ -122,6 +124,7 @@ ActiveRecord::Schema.define(version: 2018_12_31_220331) do
     t.string "availableforwork", default: "today"
     t.boolean "trade", default: false
     t.string "experience", default: "unskilled"
+    t.string "avatar", default: "none"
   end
 
   create_table "users", force: :cascade do |t|

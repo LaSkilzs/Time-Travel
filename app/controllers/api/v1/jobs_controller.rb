@@ -12,7 +12,7 @@ module Api
             @job_list << job
           end
         end
-    
+        
         @jobs = JobSerializer.new(@job_list)
     
         render json: {status:'SUCCESS', message: 'Loaded Jobs', data:@jobs}, status: :ok

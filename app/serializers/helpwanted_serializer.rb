@@ -1,6 +1,6 @@
 class HelpwantedSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :location, :female, :wage_per_week, :housing_offered, :job_id, :industry_id, :profile_id
+  attributes :location, :female, :wage_per_week, :housing_offered, :image, :job_id, :industry_id, :profile_id
 
   belongs_to :job
   belongs_to :profile

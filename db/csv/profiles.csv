@@ -1,10 +1,21 @@
-name,age,gender,marital_status,education,availableforwork,trade,experience
-Cheryl Cole,25,female,single,highschool,today,FALSE,professional
-Ginger Snaps,19,female,married,highschool,today,FALSE,unskilled
-Minnie Mouse,31,female,divorced,college,next month,TRUE,semiskilled
-Bobby Brown,55,male,married,highschool,next year,TRUE,skilled
-Tyrone Smalls,17,male,single,highschool,next week,FALSE,unskilled
-Jasper Brown,20,male,married,none,next week,TRUE,unskilled
-Chance Fountain,16,male,single,none,two weeks,TRUE,unskilled
-Prince Fountain,27,male,married,college,tomorrow,FALSE,semiskilled
-Cliff Mills,41,male,married,highschool,tomorrow,FALSE,unskilled
+name,age,gender,marital_status,education,availableforwork,trade,experience,avatar
+Cheryl Cole,25,female,single,highschool,today,FALSE,professional,"""https://images.pexels.com/photos/859199/pexels-photo-859199.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"""
+Ginger Snaps,19,female,married,highschool,today,FALSE,unskilled,"""https://images.pexels.com/photos/1499327/pexels-photo-1499327.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"""
+Minnie Mouse,31,female,divorced,college,next month,TRUE,semiskilled,"""https://images.pexels.com/photos/911591/pexels-photo-911591.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"""
+Bobby Brown,55,male,married,highschool,next year,TRUE,skilled,"""https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"""
+Tyrone Smalls,17,male,single,highschool,next week,FALSE,unskilled,"""https://images.pexels.com/photos/1040881/pexels-photo-1040881.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"""
+Jasper Brown,20,male,married,none,next week,TRUE,unskilled,"""https://images.pexels.com/photos/343717/pexels-photo-343717.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"""
+Chance Fountain,16,male,single,none,two weeks,TRUE,unskilled,"""https://images.pexels.com/photos/555790/pexels-photo-555790.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"""
+Prince Fountain,27,male,married,college,tomorrow,FALSE,semiskilled,"""https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"""
+Cliff Mills,41,male,married,highschool,tomorrow,FALSE,unskilled,"""https://images.pexels.com/photos/736715/pexels-photo-736715.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"""
+
+
+
+
+
+
+
+
+
+
+

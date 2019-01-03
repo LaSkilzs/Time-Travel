@@ -22,8 +22,10 @@ desc "Import generations from csv"
   desc "Import industries from csv"
     task industries: :environment do
       industry_filename = File.join Rails.root, "db/csv/industries.csv"
+      
+      
       CSV.foreach(industry_filename, headers: true) do |row|
-        Industry.create(name: row["name"], summary: row["summary"], availablejobs: row["availablejobs"],generation_id: row["generation_id"])
+        Industry.create(name: row["name"], summary: row["summary"], availablejobs: row["availablejobs"], image: row["image"], generation_id: row["generation_id"])
       end
     end
 
@@ -39,7 +41,7 @@ desc "Import generations from csv"
       task profiles: :environment do
         profile_filename = File.join Rails.root, "db/csv/profiles.csv"
         CSV.foreach(profile_filename, headers: true) do |row|
-          Profile.create(name: row["name"], age: row["age"], gender: row["gender"], marital_status: row["marital_status"], education: row["education"], experience: row["experience"], trade:  row["trade"], availableforwork: row["availableforwork"])
+          Profile.create(name: row["name"], age: row["age"], gender: row["gender"], marital_status: row["marital_status"], education: row["education"], experience: row["experience"], trade:  row["trade"], availableforwork: row["availableforwork"], avatar: row["avatar"])
         end
     end
 
@@ -55,7 +57,7 @@ desc "Import generations from csv"
       task helpwanteds: :environment do
         helpwanted_filename = File.join Rails.root, "db/csv/helpwanteds.csv"
         CSV.foreach(helpwanted_filename, headers: true) do |row|
-          Helpwanted.create(location: row["location"], wage_per_week: row["wage_per_week"], housing_offered: row["housing_offered"], female: row["female"], job_id: row["job_id"], industry_id: row["industry_id"], profile_id: row["profile_id"])
+          Helpwanted.create(location: row["location"], wage_per_week: row["wage_per_week"], housing_offered: row["housing_offered"], female: row["female"], image: row["image"], job_id: row["job_id"], industry_id: row["industry_id"], profile_id: row["profile_id"])
         end
     end
   end

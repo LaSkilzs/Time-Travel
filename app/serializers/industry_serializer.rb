@@ -1,6 +1,6 @@
 class IndustrySerializer
   include FastJsonapi::ObjectSerializer
-  attributes  :name, :availablejobs
+  attributes  :name, :availablejobs, :image
 
   
   belongs_to :generation
